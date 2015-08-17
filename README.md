@@ -1,2 +1,14 @@
-# XIXI
-Xixi is a cute girl using the language Python to make life easier
+# 兮兮
+兮兮是一个用Python实现的小伙伴。
+
+---
+# NOTE
+
+---
+# 修改日志
+
+---
+# 环境信息
+
+---
+# TO-DO
