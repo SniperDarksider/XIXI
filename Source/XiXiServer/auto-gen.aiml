@@ -1,0 +1,9 @@
+<aiml version="1.0.1" encoding="UTF-8">
+
+	<category>
+		<pattern>我想他 *</pattern>
+		<template>
+			他是谁呀？可以告诉我吗？
+		</template>
+	</category>
+</aiml>

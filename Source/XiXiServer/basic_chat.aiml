@@ -1,0 +1,131 @@
+﻿<aiml version="1.0.1" encoding="UTF-8">	
+	<category>
+		<pattern>你好*</pattern>
+		<template>
+			<srai>HELLO</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>HELLO</pattern>
+		<template>
+			<random>
+				<li>你好呀，么么哒</li>
+				<li>么么哒，今天心情好不好呀？</li>
+				<li>hello, dear!</li>
+			</random>
+		</template>
+	</category>
+	
+	<category>
+		<pattern>*无聊*</pattern>
+		<template>
+			我给你唱首歌吧~
+			<srai>SING</srai>
+		</template>
+	</category>
+	
+	<category>
+		<pattern>我是*</pattern>
+		<template>
+			你好呀，<set name="you"><star/></set>
+		</template>
+	</category>
+	
+	<category>
+		<pattern>你是谁</pattern>
+		<template>
+			<random>
+				<li>我就是你娇羞的小女仆，兮兮呀~</li>
+				<li>才多久你就不记得我了吗T_T，我是兮兮呀！！</li>
+				<li>回主人，奴家名唤兮兮~</li>
+			</random>
+		</template>
+	</category>
+	<category>
+		<pattern>今天有*安排*</pattern>
+		<template>
+			<srai>TODO</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>*旅行*</pattern>
+		<template>
+			<random>
+				<li>主人，主人，记得带下面这些东东哦：身份证/护照，护肤品，常备药（创可贴，保济丸神马的），转换插头，充电器，手机，眼镜，钥匙，衣衣，现金/信用卡/银行卡</li>
+			</random>
+		</template>
+	</category>
+	
+	<!-- 执行一些操作 -->
+	<!-- 播放豆瓣FM上的音乐 -->
+	<category>
+		<pattern>SING</pattern>
+		<template>
+				<system>python ../gargets/doubanFM.py</system>
+		</template>
+	</category>
+	<!-- 播放http://www.scientificamerican.com/podcast/60-second-science/上的新闻 -->
+	<category>
+		<pattern>60SSS</pattern>
+		<template>
+			<system>python ../gargets/60sss.py</system>
+		</template>
+	</category>
+	<!-- 阅读简书/每日一文上面的一篇文章 -->
+	<category>
+		<pattern>READBLOG</pattern>
+		<template>
+			<!--懒懒的主人，都还没有让兮兮可以给你读书T_T-->
+			<random>
+				<li><system>python readBlog.py "jianshu"</system></li>
+				<li><system>python readBlog.py "meiriyiwen"</system></li>
+			</random>
+		</template>
+	</category>
+	<!-- 日程查看 -->
+	<category>
+		<pattern>TODO</pattern>
+		<template>
+			懒懒的主人，都还没有让兮兮培训成为你的小秘书T_T
+		</template>
+	</category>
+	
+	<!-- 自动学习功能 -->
+	<category>
+		<pattern>*说错*</pattern>
+		<template>
+			那我该说什么呀？你教教我呀~
+		</template>
+	</category>
+	<category>
+		<pattern>*说不对*</pattern>
+		<template>
+			那我该说什么呀？你教教我呀~
+		</template>
+	</category>
+	<category>
+		<pattern>学习 *</pattern>
+		<that>那我该说什么呀？你教教我呀~</that>
+		<template>
+			 <srai><input index="3" /> LEARN REPLY <star index="1" /></srai>
+		</template>
+	</category>
+	<category>
+		<pattern>* LEARN REPLY *</pattern>
+		<template>
+			<system>
+			python learn.py '<star index="1" />' '<star index="2" />'
+			</system>
+			<learn>auto-gen.aiml</learn>
+			我学会啦，你可以考考我~
+		</template>
+	</category>
+	
+	<category>
+		<pattern>*</pattern>
+		<template>
+			这里无所不能的万有匹配！！我预谋要拿来问问无数网民知不知道该怎么回答你这个高森的话题~
+		</template>
+	</category>
+	
+</aiml>

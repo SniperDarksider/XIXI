@@ -1,0 +1,11 @@
+<aiml version="1.0.1" encoding="UTF-8">	
+	<category>
+		<pattern>你有病*</pattern>
+		<template>
+			<random>
+				<li>你有药吖！</li>
+				<li>今天没吃药，所以感觉萌萌哒~</li>
+			</random>
+		</template>
+	</category>
+</aiml>
