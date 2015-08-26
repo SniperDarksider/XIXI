@@ -55,6 +55,20 @@
 			</random>
 		</template>
 	</category>
+	<category>
+		<pattern>*睡了</pattern>
+		<template>
+			<srai>晚安</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>晚安</pattern>
+		<template>
+			<random>
+				<li>晚安哦~要做个好梦哦，么么哒</li>
+			</random>
+		</template>
+	</category>
 	
 	<!-- 执行一些操作 -->
 	<!-- 播放豆瓣FM上的音乐 -->
@@ -124,7 +138,11 @@
 	<category>
 		<pattern>*</pattern>
 		<template>
-			这里无所不能的万有匹配！！我预谋要拿来问问无数网民知不知道该怎么回答你这个高森的话题~
+			<system>
+				python learn.py '<star index="1">'
+			</system>
+			<learn>auto-gen.aiml</learn>
+			<srai>*</srai>
 		</template>
 	</category>
 	
