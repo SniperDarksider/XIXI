@@ -3,6 +3,7 @@
 		<pattern>LOAD AIML B</pattern>
 		<template>
 			<learn>basic_chat.aiml</learn>
+			<learn>auto-gen.aiml</learn>
 		</template>
 	</category>
 </aiml>

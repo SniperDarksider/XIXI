@@ -13,6 +13,7 @@ def getToken():
 	return token
 
 import os, sys
+import subprocess
 reload(sys)
 sys.setdefaultencoding("utf-8")
 def say(text, token):
@@ -21,7 +22,8 @@ def say(text, token):
 	#spd: speed, range - 1~9
 	url = "http://tsn.baidu.com/text2audio?tex=%s&lan=zh&per=0&pit=3&spd=7&cuid=***&ctp=1&tok=%s" % (text, token)
 	print url
-	os.system('mpg123 "%s"' % (url))
+	#os.system('mpg123 "%s"' % (url))
+	player = subprocess.Popen(['mpg123', url], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 	
 if '__main__' == __name__:
 	#words = ["小懒猪快起床背单词啦",]

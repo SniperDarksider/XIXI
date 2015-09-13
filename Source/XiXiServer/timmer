@@ -1,8 +1,10 @@
 # LANG="GB2312"
 #m h dom mon dow command
-#text
-* * * * * python /home/ele/gargets/doubanFM.py
+#test
+#*/10 * * * * python /home/ele/XIXI/Source/gargets/doubanFM.py
 #clock alarm
-30,40 6 * * * python /home/ele/Xixi/speakOut.py 0
-#play 60 seconds science every day at 6:45 a.m.
-45 6 * * * python /home/ele/gargets/60sss.py
+#0,15,40 6 * * * python /home/ele/Xixi/speakOut.py 0
+#play 60 seconds science every day at 6:15 a.m.
+5 6 * * * python /home/ele/XIXI/Source/gargets/60sss.py
+#auto sign in
+0 0 * * * python /home/ele/XIXI/Source/gargets/autoSignIn.py

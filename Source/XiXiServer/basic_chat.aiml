@@ -15,7 +15,30 @@
 			</random>
 		</template>
 	</category>
-	
+
+	<category>
+		<pattern>再见</pattern>
+		<template>
+			<srai>BYE</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>EXIT</pattern>
+		<template>
+			<srai>BYE</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>BYE</pattern>
+		<template>
+			<random>
+				<li>么么哒，你要走了吗？( ^_^ )/~~拜拜</li>
+				<li>下次见咯，bye bye~~</li>
+			</random>
+		</template>
+	</category>
+
 	<category>
 		<pattern>*无聊*</pattern>
 		<template>
@@ -91,9 +114,16 @@
 		<template>
 			<!--懒懒的主人，都还没有让兮兮可以给你读书T_T-->
 			<random>
-				<li><system>python readBlog.py "jianshu"</system></li>
-				<li><system>python readBlog.py "meiriyiwen"</system></li>
+				<li><system>python ../gargets/readBlog.py "jianshu"</system></li>
+				<li><system>python ../gargets/readBlog.py "meiriyiwen"</system></li>
 			</random>
+		</template>
+	</category>
+	<!-- 打卡 -->
+	<category>
+		<pattern>AUTOSIGNIN</pattern>
+		<template>
+			懒懒的主人，兮兮要去哪里打卡呢？
 		</template>
 	</category>
 	<!-- 日程查看 -->
@@ -139,10 +169,10 @@
 		<pattern>*</pattern>
 		<template>
 			<system>
-				python learn.py '<star index="1">'
+				python learn.py '<star index="1" />'
 			</system>
 			<learn>auto-gen.aiml</learn>
-			<srai>*</srai>
+			<srai><star index="1" /></srai>
 		</template>
 	</category>
 	

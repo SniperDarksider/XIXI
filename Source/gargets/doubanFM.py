@@ -19,6 +19,7 @@ while True:
 	picture = 'images/' + song[0]['picture'].split('/')[4]
 	#play
 	print 'start play: %s' % title
-	player = subprocess.Popen(['mpg123',song[0]['url']])
+	player = subprocess.Popen(['mpg123',song[0]['url']],stdout=subprocess.PIPE,stderr=subprocess.PIPE)
+	output, error = player.communicate()
 	time.sleep(song[0]['length'])
 	player.kill()

@@ -1,9 +1,31 @@
 <aiml version="1.0.1" encoding="UTF-8">
+	
+		<category>
+			<pattern>你 在 干 嘛 呀</pattern>
+			<template>
+				干干 xD 
+			</template>
+		</category>
 
-	<category>
-		<pattern>我想他 *</pattern>
-		<template>
-			他是谁呀？可以告诉我吗？
-		</template>
-	</category>
-</aiml>
+		<category>
+			<pattern>明 天 干 啥 好 呢</pattern>
+			<template>
+				天下
+			</template>
+		</category>
+
+		<category>
+			<pattern>你 在 说 什 么</pattern>
+			<template>
+				我无处不在
+			</template>
+		</category>
+
+		<category>
+			<pattern>好 邪 恶</pattern>
+			<template>
+				乖乖
+			</template>
+		</category>
+	</aiml>
+	

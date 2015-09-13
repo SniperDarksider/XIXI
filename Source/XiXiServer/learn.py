@@ -6,17 +6,7 @@ import shelve
 from aiml.LangSupport import mergeChineseSpace
 
 def save(rule, temp):
-	db = shelve.open("simple_rules.db", "c", writeback=True)
-	db[rule] = temp
-	db.sync()
-	rules = []
-	for r in db:
-		rules.append(category_template.format(pattern=r, answer=db[r]))
-	content = template.format(rules="\n".join(rules))
-	with open("auto-gen.aiml", "w") as fp:
-		fp.write(content)
-
-def learnFromUser(rule, temp):
+	print temp
 	template = """<aiml version="1.0.1" encoding="UTF-8">
 	{rules}
 	</aiml>
@@ -29,7 +19,17 @@ def learnFromUser(rule, temp):
 				{answer}
 			</template>
 		</category>"""
+	db = shelve.open("simple_rules.db", "c", writeback=True)
+	db[rule] = temp
+	db.sync()
+	rules = []
+	for r in db:
+		rules.append(category_template.format(pattern=r, answer=db[r]))
+	content = template.format(rules="\n".join(rules))
+	with open("auto-gen.aiml", "w") as fp:
+		fp.write(content)
 
+def learnFromUser(rule, temp):
 	rule = mergeChineseSpace(unicode(rule, 'utf8')).encode("utf8")
 	temp = mergeChineseSpace(unicode(temp, 'utf8')).encode("utf8")
 	save(rule, temp)
@@ -40,13 +40,13 @@ def learnFromSimsim(rule):
 	#below, I will get temp from simsim
 	temp = ""
 	url = "http://www.simsimi.com/requestChat?lc=zh&ft=1.0&req=%s&uid=23528264"
-	#print url % unicode(rule,'gb2312')
-	page = requests.get(url%unicode(rule,'gb2312'))
+	#print url % rule
+	page = requests.get(url%rule)
 	#print page.content
-	res = eval(page.content).get('res')
-	#print res
+	temp = eval(page.content).get('res')
+	#print temp
 	save(rule, temp)
-	return res
+	#return res
 
 	
 if 3 == len(sys.argv):

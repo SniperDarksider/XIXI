@@ -1,0 +1,44 @@
+Cannot connect to server socket err = No such file or directory
+Cannot connect to server request channel
+jackdmp 1.9.9
+Copyright 2001-2005 Paul Davis and others.
+Copyright 2004-2012 Grame.
+jackdmp comes with ABSOLUTELY NO WARRANTY
+This is free software, and you are welcome to redistribute it
+under certain conditions; see the file COPYING for details
+JACK server starting in realtime mode with priority 10
+Cannot connect to server socket err = No such file or directory
+Cannot connect to server request channel
+control device hw:0
+control device hw:0
+Failed to connect to session bus for device reservation Unable to autolaunch a dbus-daemon without a $DISPLAY for X11
+
+Failed to acquire device name : Audio0 error : Invalid argument
+Audio device hw:0 cannot be acquired...
+Cannot initialize driver
+JackServer::Open failed with -1
+Failed to open server
+Cannot connect to server socket err = No such file or directory
+Cannot connect to server request channel
+Cannot connect to server socket err = No such file or directory
+Cannot connect to server request channel
+Cannot connect to server socket err = No such file or directory
+Cannot connect to server request channel
+Cannot connect to server socket err = No such file or directory
+Cannot connect to server request channel
+jack server is not running or cannot be started
+[jack.c:252] error: Failed to open jack client: 0x11
+[jack.c:58] warning: FIXME: One needs to wait or write some silence here to prevent the last bits of audio to vanish out of the ringbuffer.
+[module.c:142] error: Failed to open module portaudio: file not found
+[pulse.c:84] error: Failed to open pulse audio output: Connection refused
+[nas.c:220] error: could not open default NAS server
+High Performance MPEG 1.0/2.0/2.5 Audio Player for Layers 1, 2 and 3
+	version 1.14.4; written and copyright by Michael Hipp and others
+	free software (LGPL/GPL) without any warranty but with best wishes
+
+Directory: http://mr3.douban.com/201508272152/380fd308b51dc9d5b6a3509913258fc2/view/song/small/
+Playing MPEG stream 1 of 1: p2510009_128k.mp3 ...
+
+MPEG 1.0 layer III, 128 kbit/s ABR, 44100 Hz joint-stereo
+
+[0:28] Decoding of p2510009_128k.mp3 finished.

@@ -15,7 +15,7 @@ while True:
 	#res = analyze(raw_input("You >> "))
 	#print res
 	ask = raw_input("You >> ")
-	print kernel.respond(ask)
+	print "XiXi >> ", kernel.respond(ask)
 	if "exit" == ask:
 		break
 	
