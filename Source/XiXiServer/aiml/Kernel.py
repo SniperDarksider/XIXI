@@ -18,7 +18,7 @@ import sys
 import time
 import threading
 import xml.sax
-
+import logging
 
 class Kernel:
     # module constants
@@ -36,6 +36,16 @@ class Kernel:
         self._brain = PatternMgr()
         self._respondLock = threading.RLock()
         self._textEncoding = "utf-8"
+        
+        #set up the logger
+        #author: ictar
+        self._logger = logging.getLogger(__name__)
+        self._logger.setLevel(logging.INFO)
+        self._handler = logging.FileHandler('XIXI_Kernel.log')
+        self._handler.setLevel(logging.INFO)
+        self._handler.setFormatter(logging.Formatter('%(asctime)s - %(filename)s:%(lineno)d - %(levelname)s - %(message)s'))
+        self._logger.addHandler(self._handler)
+        self._logger.info("begin to log")
 
         # set up the sessions
         if sessionStore is not None:
@@ -291,7 +301,7 @@ class Kernel:
 
         """
         for f in glob.glob(filename):
-            if self._verboseMode: print "Loading %s..." % f,
+            if self._verboseMode: self._logger.info("Loading %s..." % f),
             start = time.clock()
             # Load and parse the AIML file.
             parser = AimlParser.create_parser()
@@ -307,7 +317,8 @@ class Kernel:
                 self._brain.add(key,tem)
             # Parsing was successful.
             if self._verboseMode:
-                print "done (%.2f seconds)" % (time.clock() - start)
+                #print "done (%.2f seconds)" % (time.clock() - start)
+                self._logger.info("done (%.2f seconds)" % (time.clock() - start))
 
     def respond(self, input, sessionID = _globalSessionID):
         """Return the Kernel's response to the input string."""
